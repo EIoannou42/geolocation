@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function getLocation() {
+        if (navigator.geolocation) {
+            //TODO - Geolocation is supported by browser.
+            navigator.geolocation.getCurrentPosition(showPosition);
+        }
+        else {
+            //TODO - Geolocation is NOT supported by browser.
+            alert("Geolocation is not supported by your browser.");
+        }
+
+    }
+    function showPosition(position) {
+        let lat=position.coords.latitude;
+        let long=position.coords.longitude;
+        alert("Latitude= "+lat+" Longitude= "+long);
+    }
+    getLocation();
+
+</script>
+</body>
+</html>
